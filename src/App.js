@@ -1,3 +1,5 @@
+// styles
+import "./styles/app.scss";
 // components
 import Player from "./components/Player";
 import Song from "./components/Song";
@@ -5,7 +7,7 @@ import Song from "./components/Song";
 function App() {
   return (
     <div className="App">
-      <h1>React Music Player</h1>
+      <h4>React Music Player</h4>
       <Song />
       <Player />
     </div>
