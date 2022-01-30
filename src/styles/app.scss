@@ -2,10 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
+
 h1, h2, h3 {
-  color: rgb(85, 85, 85)
+  color: rgb(197, 197, 197);
 }
+
 
 @import "./player";
 @import "./song"

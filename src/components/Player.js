@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,8 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
+  // ref
   const audioRef = useRef(null);
 
+  // event handlers
   const playButtonHandler = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -21,12 +23,38 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
     }
   };
 
+  const playbackInfoUpdateHandler = (e) => {
+    const currentTime = e.target.currentTime;
+    const durationTime = e.target.duration;
+
+    setPlaybackInfo({
+      currentTime: currentTime,
+      durationTime: durationTime,
+    });
+  };
+
+  // state
+  const [playbackInfo, setPlaybackInfo] = useState({
+    currentTime: 0,
+    durationTime: null,
+  });
+
+  // other
+  const formatTime = (time) => {
+    return (
+      "0" +
+      Math.floor(time / 60) +
+      ":" +
+      ("0" + Math.floor(time % 60)).slice(-2)
+    );
+  };
+
   return (
     <div className="player-container">
       <div className="time-control">
-        <p>00:21</p>
+        <p>{formatTime(playbackInfo.currentTime)}</p>
         <input type="range" />
-        <p>04:32</p>
+        <p>{formatTime(playbackInfo.durationTime)}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon className="left-icon" icon={faAngleLeft} size="2x" />
@@ -39,7 +67,12 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
         <FontAwesomeIcon className="stop-icon" icon={faStop} size="2x" />
         <FontAwesomeIcon className="right-icon" icon={faAngleRight} size="2x" />
       </div>
-      <audio ref={audioRef} src={currentSong.audio}></audio>
+      <audio
+        ref={audioRef}
+        src={currentSong.audio}
+        onLoadedMetadata={playbackInfoUpdateHandler}
+        onTimeUpdate={playbackInfoUpdateHandler}
+      ></audio>
     </div>
   );
 };
