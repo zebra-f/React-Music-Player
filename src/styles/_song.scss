@@ -1,9 +1,19 @@
 .song-container {
     min-height: 60vh;
-    background: rgb(149, 240, 212);
+    background: rgb(228, 248, 242);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
+    img {
+        width: 20%;
+        border-radius: 10%;
+    }
+    h2 {
+        padding: 1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
 }
