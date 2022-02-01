@@ -5,11 +5,12 @@ import "./styles/app.scss";
 // components
 import Player from "./components/Player";
 import Song from "./components/Song";
+import Library from "./components/Library";
 import songData from "./utils";
 
 function App() {
   const [songs, setSongs] = useState(songData());
-  const [currentSong, setCurrentSong] = useState(songs[2]);
+  const [currentSong, setCurrentSong] = useState(songs[5]);
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -21,6 +22,7 @@ function App() {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
+      <Library songs={songs} />
     </div>
   );
 }

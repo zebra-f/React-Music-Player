@@ -49,8 +49,7 @@ const Player = ({ currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
   // other
   const formatTime = (time) => {
     return (
-      "0" +
-      Math.floor(time / 60) +
+      ("0" + Math.floor(time / 60)).slice(-2) +
       ":" +
       ("0" + Math.floor(time % 60)).slice(-2)
     );
