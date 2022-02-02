@@ -11,7 +11,7 @@ const songData = () => {
         "https://chillhop.com/wp-content/uploads/2021/11/4c9682ee612a3b8ef51de286c49b5489408e9257-1024x1024.jpg",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=27501",
       colors: ["#0C131B", "#926873"],
-      active: false,
+      active: true,
     },
     {
       id: uuidv4(),

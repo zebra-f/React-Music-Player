@@ -35,7 +35,7 @@ function App() {
     });
   };
   const [songs, setSongs] = useState(songData());
-  const [currentSong, setCurrentSong] = useState(songs[5]);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -52,6 +52,7 @@ function App() {
       <Library
         audioRef={audioRef}
         songs={songs}
+        setSongs={setSongs}
         setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}

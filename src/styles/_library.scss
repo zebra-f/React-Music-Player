@@ -65,4 +65,10 @@
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
     background: #555;
-} 
+}
+
+
+.selected {
+    border-top: 0.15rem solid #000814;
+    border-bottom: 0.15rem solid #000814;
+}
