@@ -6,6 +6,7 @@ import "./styles/app.scss";
 import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
+import Nav from "./components/Nav";
 import songData from "./utils";
 
 function App() {
@@ -18,12 +19,6 @@ function App() {
     durationTime: null,
   });
   // <AUDIO> handler
-  // WARNING WARNING WARNING
-  // for now
-  // <audio
-  // onTimeUpdate={playbackInfoUpdateHandler}>
-  // </audio>
-  // is causing every fucntion here to run constantly
   const playbackInfoUpdateHandler = (e) => {
     const currentTime = e.target.currentTime;
     const durationTime = e.target.duration;
@@ -37,9 +32,15 @@ function App() {
   const [songs, setSongs] = useState(songData());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  // library visibility status
+  const [libraryVStatus, setLibraryVStatus] = useState(false);
 
   return (
     <div className="App">
+      <Nav
+        libraryVStatus={libraryVStatus}
+        setLibraryVStatus={setLibraryVStatus}
+      />
       <Song currentSong={currentSong} />
       <Player
         currentSong={currentSong}
@@ -51,12 +52,14 @@ function App() {
       />
       <Library
         audioRef={audioRef}
+        libraryVStatus={libraryVStatus}
         songs={songs}
         setSongs={setSongs}
         setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
+
       {/* _ */}
       <audio
         ref={audioRef}

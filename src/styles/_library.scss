@@ -9,6 +9,10 @@
 
     overflow: scroll;
 
+    transform: translateX(-100%);
+    transition: all 0.4s ease;
+    opacity: 0.4;
+    
     #library-title {
         padding: 2rem 2rem 1rem;
     }
@@ -71,4 +75,9 @@
 .selected {
     border-top: 0.15rem solid #000814;
     border-bottom: 0.15rem solid #000814;
+}
+
+.active-library {
+    transform: translateX(0%);
+    opacity: 1;
 }
