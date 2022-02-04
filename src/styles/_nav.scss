@@ -4,6 +4,10 @@
     justify-content: space-around;
     align-items: center;
 
+    h1 {
+        font-family: 'Great Vibes', cursive;
+    }
+
     button {
         background-color: transparent;
         font-size: 1.2rem;
@@ -13,7 +17,7 @@
         padding: 0.4rem;
         transition: all 0.2s ease;
         &:hover{
-            color: #2ec4b6;
+            color: #ffc300;
         }
         
     }
