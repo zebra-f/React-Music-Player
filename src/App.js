@@ -36,7 +36,7 @@ function App() {
   const [libraryVStatus, setLibraryVStatus] = useState(false);
 
   return (
-    <div className="App">
+    <div className={`App ${libraryVStatus ? "app-active-library" : ""}`}>
       <Nav
         libraryVStatus={libraryVStatus}
         setLibraryVStatus={setLibraryVStatus}
