@@ -33,3 +33,11 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .time-control {
+        width: 88%;
+    }
+    .play-control{
+        width: 44%;
+    }
+}

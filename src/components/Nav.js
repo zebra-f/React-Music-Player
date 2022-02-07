@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = ({ libraryVStatus, setLibraryVStatus }) => {
   return (
-    <div className="nav-container">
+    <div
+      className={`nav-container ${libraryVStatus ? "nav-active-library" : ""}`}
+    >
       <h1>R-Music</h1>
       <button
         onClick={() => {
