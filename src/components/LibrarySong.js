@@ -4,7 +4,6 @@ const LibrarySong = ({
   setSongs,
   setCurrentSong,
   isPlaying,
-  setIsPlaying,
   audioRef,
 }) => {
   // handlers

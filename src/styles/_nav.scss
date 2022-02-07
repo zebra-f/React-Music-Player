@@ -3,14 +3,17 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+// now
     h1 {
         font-family: 'Great Vibes', cursive;
+        letter-spacing: 0.2rem;
     }
 
     button {
         background-color: transparent;
         font-size: 1.2rem;
+        // font-family: 'Montserrat', sans-serif;
+
         border: none;
         color: #ffe8d6;
         cursor: pointer;
